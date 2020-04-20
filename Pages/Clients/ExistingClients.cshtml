@@ -10,7 +10,7 @@
         <h1 class="text-info">ExistingClients</h1>
     </div>
     <div class="col-3">
-        <a class="btn btn-info form-control text-white">Create New Client</a>
+        <a asp-page="Create" class="btn btn-info form-control text-white">Create New Client</a>
     </div>
     <div class="col-12 border p-3 mt-3">
         <form method="post">
@@ -28,7 +28,7 @@
                             <label asp-for="Clients.FirstOrDefault().NextStep"></label>
                         </th>
                         <th>
-                            <label asp-for="Clients.FirstOrDefault().Cont"></label>
+                            <label asp-for="Clients.FirstOrDefault().ContactNumber"></label>
                         </th>
                         <th>
 
