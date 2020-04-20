@@ -25,5 +25,22 @@ namespace GuptaAccounting.Pages.Clients
         {
             Clients = await _db.Client.ToListAsync();
         }
+
+        public async Task<IActionResult> OnPostDelete(int id)
+        {
+            var Client_to_delete = await _db.Client.FindAsync(id);
+
+            if(Client_to_delete == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _db.Client.Remove(Client_to_delete);
+                await _db.SaveChangesAsync();
+
+                return RedirectToPage("ExistingClients");
+            }
+        }
     }
 }
