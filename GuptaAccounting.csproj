@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\images\logo_transparent.png" />
   </ItemGroup>
 
 </Project>
