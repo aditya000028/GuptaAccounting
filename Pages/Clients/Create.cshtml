@@ -20,13 +20,81 @@
             <span class="text-danger" asp-validation-for="Client.Name"></span>
         </div>
         <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Client.Bookkeeping"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Bookkeeping" class="form-control" />
+            </div>
+            <span class="text-danger" id="WorkTypeMissing"></span>
+            <div class="col-2">
+                <label asp-for="Client.GST_PST_WCB_Returns"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.GST_PST_WCB_Returns" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.GST_PST_WCB_Returns"></span>
+            <div class="col-2">
+                <label asp-for="Client.Payroll_Services"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Payroll_Services" value="true" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Payroll_Services"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Client.Government_Requisite_Form_Applications"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Government_Requisite_Form_Applications" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Government_Requisite_Form_Applications"></span>
+            <div class="col-2">
+                <label asp-for="Client.Personal_Income_Taxation"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Personal_Income_Taxation" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Personal_Income_Taxation"></span>
+            <div class="col-2">
+                <label asp-for="Client.Tax_Returns"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Tax_Returns" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Tax_Returns"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Client.Self_Employed_Business_Taxes"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Self_Employed_Business_Taxes" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Self_Employed_Business_Taxes"></span>
+            <div class="col-2">
+                <label asp-for="Client.Previous_Year_Filings"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Previous_Year_Filings" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Previous_Year_Filings"></span>
+            <div class="col-2">
+                <label asp-for="Client.Personal_Income_Taxation"></label>
+            </div>
+            <div class="col-1">
+                <input type="checkbox" asp-for="Client.Personal_Income_Taxation" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Client.Personal_Income_Taxation"></span>
+        </div>
+        <div class="form-group row">
             <div class="col-3">
-                <label asp-for="Client.WorkType"></label>
+                <label asp-for="Client.Other"></label>
             </div>
             <div class="col-6">
-                <input type="text" asp-for="Client.WorkType" class="form-control" />
+                <input type="text" asp-for="Client.Other" class="form-control" />
             </div>
-            <span class="text-danger" asp-validation-for="Client.WorkType"></span>
         </div>
         <div class="form-group row">
             <div class="col-3">
@@ -35,20 +103,19 @@
             <div class="col-6">
                 <input type="text" asp-for="Client.NextStep" class="form-control" />
             </div>
-
         </div>
         <div class="form-group row">
             <div class="col-3">
                 <label asp-for="Client.ContactNumber"></label>
             </div>
             <div class="col-6">
-                <input asp-for="Client.ContactNumber" class="form-control" />
+                <input asp-for="Client.ContactNumber" class="form-control" placeholder="0123456789"/>
             </div>
             <span class="text-danger" asp-validation-for="Client.ContactNumber"></span>
         </div>
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <input type="submit" value="Create" class="btn btn-primary form-control" /> 
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
             </div>
             <div class="col-3">
                 <a asp-page="ExistingClients" class="btn btn-success form-control">Back to List</a>
