@@ -32,9 +32,16 @@ namespace GuptaAccounting.Pages.Clients
             {
                 var DbClient = await _db.Client.FindAsync(Client.Id);
                 DbClient.Name = Client.Name;
-                DbClient.WorkType = Client.WorkType;
-                DbClient.NextStep = Client.NextStep;
+                DbClient.Bookkeeping = Client.Bookkeeping;
+                DbClient.Payroll_Services = Client.Payroll_Services;
+                DbClient.Personal_Income_Taxation = Client.Personal_Income_Taxation;
+                DbClient.Previous_Year_Filings = Client.Previous_Year_Filings;
+                DbClient.Self_Employed_Business_Taxes= Client.Self_Employed_Business_Taxes;
+                DbClient.Tax_Returns = Client.Tax_Returns;
+                DbClient.GST_PST_WCB_Returns = Client.GST_PST_WCB_Returns;
+                DbClient.Government_Requisite_Form_Applications = Client.Government_Requisite_Form_Applications;
                 DbClient.ContactNumber = Client.ContactNumber;
+                DbClient.NextStep = Client.NextStep;
 
                 await _db.SaveChangesAsync();
 

@@ -22,7 +22,7 @@
                             <label asp-for="Clients.FirstOrDefault().Name"></label>
                         </th>
                         <th>
-                            <label asp-for="Clients.FirstOrDefault().WorkType"></label>
+                            <label for="WorkType">Work Type</label>
                         </th>
                         <th>
                             <label asp-for="Clients.FirstOrDefault().NextStep"></label>
@@ -41,7 +41,55 @@
                         @Html.DisplayFor(m => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(m => item.WorkType)
+                        @{ 
+                            if(item.Bookkeeping == true)
+                            {
+                                Html.DisplayFor(m => item.Bookkeeping);
+
+                            }
+                            if (item.Personal_Income_Taxation == true)
+                            {
+                                Html.DisplayFor(m => item.Personal_Income_Taxation);
+
+                            }
+                            if (item.Self_Employed_Business_Taxes == true)
+                            {
+                                Html.DisplayFor(m => item.Self_Employed_Business_Taxes);
+
+                            }
+                            if (item.GST_PST_WCB_Returns == true)
+                            {
+                                Html.DisplayFor(m => item.GST_PST_WCB_Returns);
+
+                            }
+                            if (item.Tax_Returns == true)
+                            {
+                                Html.DisplayFor(m => item.Tax_Returns);
+
+                            }
+                            if (item.Payroll_Services == true)
+                            {
+                                Html.DisplayFor(m => item.Payroll_Services);
+
+                            }
+                            if (item.Previous_Year_Filings == true)
+                            {
+                                Html.DisplayFor(m => item.Previous_Year_Filings);
+
+                            }
+                            if (item.Government_Requisite_Form_Applications == true)
+                            {
+                                Html.DisplayFor(m => item.Government_Requisite_Form_Applications);
+
+                            }
+                            if (item.Other != null)
+                            {
+                                Html.DisplayFor(m => item.Other);
+
+                            }
+
+                        }
+                        
                     </td>
                     <td>
                         @Html.DisplayFor(m => item.NextStep)
