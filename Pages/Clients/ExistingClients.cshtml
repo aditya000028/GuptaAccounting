@@ -7,7 +7,7 @@
 
 <div class="container row p-0 m-0">
     <div class="col-9">
-        <h1 class="text-info">ExistingClients</h1>
+        <h1 class="text-info">Existing Clients</h1>
     </div>
     <div class="col-3">
         <a asp-page="Create" class="btn btn-info form-control text-white">Create New Client</a>
@@ -41,55 +41,55 @@
                         @Html.DisplayFor(m => item.Name)
                     </td>
                     <td>
-                        @{ 
-                            if(item.Bookkeeping == true)
+                        @{
+                            if (item.Bookkeeping == true)
                             {
-                                Html.DisplayFor(m => item.Bookkeeping);
-
+                                @Html.DisplayNameFor(m => item.Bookkeeping)
+                                <br />
                             }
                             if (item.Personal_Income_Taxation == true)
                             {
-                                Html.DisplayFor(m => item.Personal_Income_Taxation);
-
+                                @Html.DisplayNameFor(m => item.Personal_Income_Taxation);
+                                <br />
                             }
                             if (item.Self_Employed_Business_Taxes == true)
                             {
-                                Html.DisplayFor(m => item.Self_Employed_Business_Taxes);
-
+                                @Html.DisplayNameFor(m => item.Self_Employed_Business_Taxes);
+                                <br />
                             }
                             if (item.GST_PST_WCB_Returns == true)
                             {
-                                Html.DisplayFor(m => item.GST_PST_WCB_Returns);
-
+                                @Html.DisplayNameFor(m => item.GST_PST_WCB_Returns);
+                                <br />
                             }
                             if (item.Tax_Returns == true)
                             {
-                                Html.DisplayFor(m => item.Tax_Returns);
-
+                                @Html.DisplayNameFor(m => item.Tax_Returns);
+                                <br />
                             }
                             if (item.Payroll_Services == true)
                             {
-                                Html.DisplayFor(m => item.Payroll_Services);
-
+                                @Html.DisplayNameFor(m => item.Payroll_Services);
+                                <br />
                             }
                             if (item.Previous_Year_Filings == true)
                             {
-                                Html.DisplayFor(m => item.Previous_Year_Filings);
-
+                                @Html.DisplayNameFor(m => item.Previous_Year_Filings);
+                                <br />
                             }
                             if (item.Government_Requisite_Form_Applications == true)
                             {
-                                Html.DisplayFor(m => item.Government_Requisite_Form_Applications);
-
+                                @Html.DisplayNameFor(m => item.Government_Requisite_Form_Applications);
+                                <br />
                             }
                             if (item.Other != null)
                             {
-                                Html.DisplayFor(m => item.Other);
+                                @Html.DisplayFor(m => item.Other);
 
                             }
 
                         }
-                        
+
                     </td>
                     <td>
                         @Html.DisplayFor(m => item.NextStep)
