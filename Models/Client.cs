@@ -16,6 +16,7 @@ namespace GuptaAccounting.Model
         public string Name { get; set; }
 
         [Required]
+        [DisplayName("Bookkeeping")]
         public bool Bookkeeping { get; set; }
 
         [Required]
