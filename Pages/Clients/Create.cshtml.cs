@@ -45,6 +45,7 @@ namespace GuptaAccounting.Pages.Clients
 
             if (ModelState.IsValid)
             {
+                Client.IsConsultationClient = false;
                 await _db.Client.AddAsync(Client);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("ExistingClients");
