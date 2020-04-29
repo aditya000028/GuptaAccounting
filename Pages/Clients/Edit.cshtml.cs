@@ -58,6 +58,7 @@ namespace GuptaAccounting.Pages.Clients
                 DbClient.ContactNumber = Client.ContactNumber;
                 DbClient.NextStep = Client.NextStep;
                 DbClient.Other = Client.Other;
+                DbClient.IsConsultationClient = Client.IsConsultationClient;
 
                 await _db.SaveChangesAsync();
 

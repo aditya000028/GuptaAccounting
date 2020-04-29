@@ -8,15 +8,15 @@ using GuptaAccounting.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GuptaAccounting.Pages.Clients
+namespace GuptaAccounting.Pages
 {
-    public class CreateModel : PageModel
+    public class FreeConsultationModel : PageModel
     {
         private readonly ApplicationDbContext _db;
 
         public CheckboxValidation validation;
 
-        public CreateModel(ApplicationDbContext db)
+        public FreeConsultationModel(ApplicationDbContext db)
         {
             _db = db;
             validation = new CheckboxValidation();
@@ -45,10 +45,10 @@ namespace GuptaAccounting.Pages.Clients
 
             if (ModelState.IsValid)
             {
-                Client.IsConsultationClient = false;
+                Client.IsConsultationClient = true;
                 await _db.Client.AddAsync(Client);
                 await _db.SaveChangesAsync();
-                return RedirectToPage("ExistingClients");
+                return RedirectToPage("Index");
             }
             else
             {

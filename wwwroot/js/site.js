@@ -13,6 +13,8 @@ function CheckCheckboxes() {
     var Government_Requisite_Form_Applications = document.getElementById("Client_Government_Requisite_Form_Applications").checked;
     var Other = document.getElementById("Client_Other");
 
+    var CheckboxError = document.getElementById("CheckboxError");
+
     if (Bookkeeping == false &&
         Personal_Income_Taxation == false &&
         Self_Employed_Business_Taxes == false &&
@@ -22,11 +24,11 @@ function CheckCheckboxes() {
         Previous_Year_Filings == false &&
         Government_Requisite_Form_Applications == false &&
         Other.value == "") {
-        var CheckboxError = document.getElementById("CheckboxError");
         CheckboxError.innerHTML = "At least one checkbox or the 'Other' field must be filled";
         return false;
     }
     else {
+        CheckboxError.innerHTML = "";
         return true;
     }
 };

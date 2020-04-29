@@ -1,7 +1,7 @@
 ﻿@page
-@model GuptaAccounting.Pages.Clients.CreateModel
+@model GuptaAccounting.Pages.FreeConsultationModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "FreeConsultation";
 }
 
 <head>
@@ -9,7 +9,8 @@
 </head>
 
 <br />
-<h1 class="text-info">Create New Client</h1><br />
+<h1 class="text-info">Get a FREE Consultation</h1>
+<br />
 
 <div class="border container" style="padding:30px;">
     <form method="post">
@@ -102,14 +103,6 @@
         </div>
         <div class="form-group row">
             <div class="col-3">
-                <label asp-for="Client.NextStep"></label>
-            </div>
-            <div class="col-6">
-                <input type="text" asp-for="Client.NextStep" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-3">
                 <label asp-for="Client.ContactNumber"></label>
             </div>
             <div class="col-6">
@@ -119,10 +112,7 @@
         </div>
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <input type="submit" value="Create" onclick="return CheckCheckboxes()" class="btn btn-primary form-control" />
-            </div>
-            <div class="col-3">
-                <a asp-page="ExistingClients" class="btn btn-success form-control">Back to List</a>
+                <input type="submit" value="Submit" onclick="return CheckCheckboxes()" class="btn btn-primary form-control" />
             </div>
         </div>
     </form>

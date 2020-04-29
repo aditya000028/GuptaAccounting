@@ -56,5 +56,9 @@ namespace GuptaAccounting.Model
         [DisplayName("Contact Number")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid contact number")]
         public string ContactNumber { get; set; }
+
+        [Required]
+        [DisplayName("Consultation Client")]
+        public bool IsConsultationClient { get; set; }
     }
 }
