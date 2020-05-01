@@ -4,78 +4,90 @@
     ViewData["Title"] = "Home page";
 }
 
-<style>
-
-</style>
-
 <body>
-    <div class="Home">
-        <img src="~/images/AccountantCalculating.jpg">
-    </div>
-    <br />
-    <div class="Services container-fluid">
-        <div class="text-center text-white"style="padding: 5px;" >
-            <h2>Services</h2>
-            <p>Click any of the services below to check them out!</p>
+    <div class="container-fluid">
+        <div class="row">
+            <img src="~/images/HomeImage.jpg" class="HomeBackgroundImage" />
+            <img src="~/images/logo_transparent.png" class="LogoHomeTransparent" />
+            <h2 class="HomeText">Here for you</h2>
         </div>
-        <div class="cards">
-            <div class="row justify-content-center">
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/Bookkeeping.jpg" class="card-img-top" alt="Bookkeeping">
-                    <div class="card-body">
-                        <a href="/Services/Bookkeeping" class="card-title btn btn-primary ">Bookkeeping</a>
-                        <p class="card-text">description</p>
-                    </div>
+        <div class="row">
+            <div class="AboutMe">
+                <div class="float-left">
+                    <img src="~/images/DadProfilePhoto.jpg" class="ProfilePhoto" />
                 </div>
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/PersonalIncomeTax.jpg" class="card-img-top" alt="Personal Income Taxation">
-                    <div class="card-body">
-                        <a href="/Services/PersonalIncomeTaxation" class="card-title btn btn-primary ">Personal Income Taxation</a>
-                        <p class="card-text">description</p>
-                    </div>
-                </div>
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/BusinessTax.jpg" class="card-img-top" alt="Self-Employed Business Taxes">
-                    <div class="card-body">
-                        <a href="/Services/SelfEmployedBusinessTaxes" class="card-title btn btn-primary ">Self-Employed Business Taxes</a>
-                        <p class="card-text">description</p>
-                    </div>
-                </div>
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/GST-PST-WCB.jpg" class="card-img-top" alt="GSTPSTWCB">
-                    <div class="card-body">
-                        <a href="/Services/GST-PST-WCB-Returns" class="card-title btn btn-primary ">GST/PST/WCB Returns</a>
-                        <p class="card-text">description</p>
-                    </div>
-                </div>
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/TaxReturn.jpg" class="card-img-top" alt="Tax Returns">
-                    <div class="card-body">
-                        <a href="/Services/TaxReturns" class="card-title btn btn-primary ">Tax Returns</a>
-                        <p class="card-text">description</p>
-                    </div>
+                <div class="">
+                    <h2>About Me</h2>
+                    <p class="AboutMeInfo border-bottom-0 border-right-0">Hi I am an accountant and do accountant stuff. </p>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/Payroll.jpg" class="card-img-top" alt="Payroll Services">
-                    <div class="card-body">
-                        <a href="/Services/Payroll" class="card-title btn btn-primary ">Payroll</a>
-                        <p class="card-text">description</p>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="Services">
+                <div class="text-center text-white HomeTextStyle" style="padding: 5px;">
+                    <h2>Services</h2>
+                    <p>Click any of the services below to check them out!</p>
                 </div>
-                <div class="card shadow border-white m-4" style="width: 12rem;">
-                    <img src="~/images/PreviousYearFilings.jpg" class="card-img-top" alt="Previous Year Filings">
-                    <div class="card-body">
-                        <a href="/Services/PreviousYearFilings" class="card-title btn btn-primary ">Previous Year Filings</a>
-                        <p class="card-text">description</p>
+                <div class="cards">
+                    <div class="row justify-content-center">
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/Bookkeeping.jpg" class="card-img-top" alt="Bookkeeping">
+                            <div class="card-body">
+                                <a href="/Services/Bookkeeping" class="card-title btn btn-primary ">Bookkeeping</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/PersonalIncomeTax.jpg" class="card-img-top" alt="Personal Income Taxation">
+                            <div class="card-body">
+                                <a href="/Services/PersonalIncomeTaxation" class="card-title btn btn-primary ">Personal Income Taxation</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/BusinessTax.jpg" class="card-img-top" alt="Self-Employed Business Taxes">
+                            <div class="card-body">
+                                <a href="/Services/SelfEmployedBusinessTaxes" class="card-title btn btn-primary ">Self-Employed Business Taxes</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/GST-PST-WCB.jpg" class="card-img-top" alt="GSTPSTWCB">
+                            <div class="card-body">
+                                <a href="/Services/GST-PST-WCB-Returns" class="card-title btn btn-primary ">GST/PST/WCB Returns</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/TaxReturn.jpg" class="card-img-top" alt="Tax Returns">
+                            <div class="card-body">
+                                <a href="/Services/TaxReturns" class="card-title btn btn-primary ">Tax Returns</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card shadow border-white m-4 p-0" style="width: 12rem;">
-                    <img src="~/images/FillingForm.jpg" class="card-img-top" alt="Govt. Form Applications">
-                    <div class="card-body">
-                        <a href="/Services/GovernmentRequisiteFormApplications" class="card-title btn btn-primary ">Govt. Form Applications</a>
-                        <p class="card-text">description</p>
+                    <div class="row justify-content-center">
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/Payroll.jpg" class="card-img-top" alt="Payroll Services">
+                            <div class="card-body">
+                                <a href="/Services/Payroll" class="card-title btn btn-primary ">Payroll</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
+                        <div class="card shadow border-white m-4" style="width: 12rem;">
+                            <img src="~/images/PreviousYearFilings.jpg" class="card-img-top" alt="Previous Year Filings">
+                            <div class="card-body">
+                                <a href="/Services/PreviousYearFilings" class="card-title btn btn-primary ">Previous Year Filings</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
+                        <div class="card shadow border-white m-4 p-0" style="width: 12rem;">
+                            <img src="~/images/FillingForm.jpg" class="card-img-top" alt="Govt. Form Applications">
+                            <div class="card-body">
+                                <a href="/Services/GovernmentRequisiteFormApplications" class="card-title btn btn-primary ">Govt. Form Applications</a>
+                                <p class="card-text">description</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
