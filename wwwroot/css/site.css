@@ -69,3 +69,122 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Home Page*/
+.HomeBackgroundImage {
+    /* Add the blur effect */
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    filter: brightness(30%);
+    
+    
+}
+
+.HomeText {
+    /*background-color: rgb(0,0,0); Fallback color
+    background-color: rgba(0,0,0, 0.4); Black w/opacity/see-through */
+    color: #1872a4;
+    font-weight: bold;
+    font-family: Forte;
+    /*border: 3px solid #f1f1f1;*/
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    font-size: 5vw;
+}
+
+.LogoHomeTransparent {
+    width: 80%;
+    height: auto;
+    z-index: 3;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.Services {
+    background-color: #1872a4;
+    width: inherit;
+    height: auto;
+}
+
+.HomeTextStyle {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.row {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: inherit;
+    height: inherit;
+}
+
+img.card-img-top {
+    height: 125px;
+}
+
+.card-body {
+    padding: 1.50rem;
+    height: 200px;
+}
+
+.card-body:hover {
+    background-color: #d6d5d5;
+}
+
+img.card-img-top {
+    border-bottom-color: #1872a4;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+}
+
+.AboutMe {
+
+}
+
+.ProfilePhoto {
+    width: inherit;
+    height: auto;
+}
+
+.AboutMeText {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+    max-width: 600px;
+    height: auto;
+}
+
+.AboutMeInfo {
+
+}
+
+.ShareAboutMe {
+    background-color: mediumpurple;
+    width: inherit;
+    height: auto;
+}
+
+.SocialMediaIcon {
+    width: 70px;
+    height: auto;
+    padding: 10px;
+}
