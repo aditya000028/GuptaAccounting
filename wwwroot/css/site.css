@@ -73,9 +73,11 @@ body {
 /* Home Page*/
 .HomeBackgroundImage {
     /* Add the blur effect */
-    width: inherit;
+    width: 100%;
     height: auto;
+    min-height: 100px;
     filter: brightness(30%);
+    
     
 }
 
@@ -102,7 +104,7 @@ body {
     height: auto;
     z-index: 3;
     position: absolute;
-    top: 8%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
@@ -154,10 +156,25 @@ img.card-img-top {
     border-bottom-style: solid;
 }
 
+.AboutMe {
+
+}
+
+.ProfilePhoto {
+    width: inherit;
+    height: auto;
+}
+
 .AboutMeText {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
-    width: 400px;
+    width: auto;
+    max-width: 600px;
+    height: auto;
+}
+
+.AboutMeInfo {
+
 }
 
 .ShareAboutMe {
