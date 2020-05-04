@@ -9,11 +9,10 @@
     <script src="~/js/site.js"></script>
 </head>
 
-<br />
-<h1 class="text-info">Edit Client Info</h1>
-<br />
-
-<div class="border container" style="padding:30px;">
+<div class="container" style="padding:30px;">
+    <br />
+    <h1 class="text-info">Edit Client Info</h1>
+    <br />
     <form method="post">
         <input type="hidden" asp-for="Client.Id" />
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
