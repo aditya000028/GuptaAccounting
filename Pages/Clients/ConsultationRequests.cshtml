@@ -4,8 +4,9 @@
     ViewData["Title"] = "ConsultationRequests";
 }
 
-<div class="container row p-0 m-0">
+<div class="container">
     <div class="col-9">
+        <br />
         <h1 class="text-info">Consultation Requests</h1>
     </div>
     <div class="col-12 border p-3 mt-3">
@@ -19,9 +20,6 @@
                         </th>
                         <th>
                             <label for="WorkType">Work Type</label>
-                        </th>
-                        <th>
-                            Time (under maintenance)
                         </th>
                         <th>
                             <label asp-for="Clients.FirstOrDefault().ContactNumber"></label>
@@ -88,9 +86,6 @@
 
                                     }
 
-                                </td>
-                                <td>
-                                    -
                                 </td>
                                 <td>
                                     @Html.DisplayFor(m => item.ContactNumber)
