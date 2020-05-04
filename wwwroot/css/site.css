@@ -188,3 +188,36 @@ img.card-img-top {
     height: auto;
     padding: 10px;
 }
+
+/*Services Page*/
+
+.ServicesHeader {
+    background-color: #6196ca;
+}
+
+.ServicesText {
+    z-index: 4;
+    position: absolute;
+    height: inherit;
+    width: 50%;
+}
+
+.ServicesPicture {
+    z-index: 3;
+    background-color: #6196ca;
+}
+
+.SideNav {
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 30%;
+
+    width: 100%
+}
+
+u:hover {
+    color: #1872a4;
+}
