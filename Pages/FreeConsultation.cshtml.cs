@@ -234,6 +234,7 @@ namespace GuptaAccounting.Pages
 
         public async Task<IActionResult> OnPost()
         {
+            //Add custom attribute for validation instead of this
             if (validation.CheckCheckboxes(Client.Bookkeeping,
                     Client.Payroll_Services,
                     Client.Personal_Income_Taxation,
