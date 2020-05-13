@@ -45,7 +45,7 @@
                 <input asp-for="Client.Payroll_Services" value="true" class="form-control" />
             </div>
             @*Add server side validation here*@
-            <span class="text-danger col-3" id="CheckboxError"></span>
+        <span class="text-danger col-3" asp-validation-for="Client.AreCheckboxesAndOtherValid"></span>
         </div>
         <div class="form-group row">
             <div class="col-2">
@@ -112,7 +112,7 @@
         </div>
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <input type="submit" value="Submit" onclick="return CheckCheckboxes()" class="btn btn-primary form-control" />
+                <input type="submit" value="Submit"  class="btn btn-primary form-control" />
             </div>
         </div>
     </form>
