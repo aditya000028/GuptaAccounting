@@ -1,8 +1,7 @@
 ﻿@page
-@model GuptaAccounting.Pages.Admin.EditModel
+@model GuptaAccounting.Pages.Clients.CreateModel
 @{
-
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
 <head>
@@ -11,17 +10,15 @@
 
 <div class="container" style="padding:30px;">
     <br />
-    <h1 class="text-info">Edit Client Info</h1>
-    <br />
+    <h1 class="text-info">Create New Client</h1><br />
     <form method="post">
-        <input type="hidden" asp-for="Client.Id" />
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
             <div class="col-3">
                 <label asp-for="Client.Name"></label>
             </div>
             <div class="col-6">
-                <input type="text" asp-for="Client.Name" class="form-control" autofocus autocomplete="on" />
+                <input type="text" asp-for="Client.Name" class="form-control" />
             </div>
             <span class="text-danger col-3" asp-validation-for="Client.Name"></span>
         </div>
@@ -44,9 +41,9 @@
                 <label asp-for="Client.Payroll_Services"></label>
             </div>
             <div class="col-1">
-                <input asp-for="Client.Payroll_Services" class="form-control" />
+                <input asp-for="Client.Payroll_Services" value="true" class="form-control" />
             </div>
-            <span class="text-danger col 3" id="CheckboxError"></span>
+            <span class="text-danger col-3" id="CheckboxError"></span>
         </div>
         <div class="form-group row">
             <div class="col-2">
@@ -99,7 +96,7 @@
                 <label asp-for="Client.Other"></label>
             </div>
             <div class="col-6">
-                <input type="text" asp-for="Client.Other" class="form-control" autocomplete="on" />
+                <input type="text" asp-for="Client.Other" class="form-control" />
             </div>
         </div>
         <div class="form-group row">
@@ -107,7 +104,7 @@
                 <label asp-for="Client.NextStep"></label>
             </div>
             <div class="col-6">
-                <input type="text" asp-for="Client.NextStep" class="form-control" autocomplete="on" />
+                <input type="text" asp-for="Client.NextStep" class="form-control" />
             </div>
         </div>
         <div class="form-group row">
@@ -121,10 +118,10 @@
         </div>
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <input type="submit" value="Update" onclick="return CheckCheckboxes()" class="btn btn-primary form-control" />
+                <input type="submit" value="Create" onclick="return CheckCheckboxes()" class="btn btn-primary form-control" />
             </div>
             <div class="col-3">
-                <a href="javascript:history.go(-1)" class="btn btn-success form-control">Back to List</a>
+                <a asp-page="ExistingClients" class="btn btn-success form-control">Back to List</a>
             </div>
         </div>
     </form>

@@ -8,7 +8,7 @@ using GuptaAccounting.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GuptaAccounting.Pages.Admin
+namespace GuptaAccounting.Pages.Clients
 {
     public class CreateModel : PageModel
     {
