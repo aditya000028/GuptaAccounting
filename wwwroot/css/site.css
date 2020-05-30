@@ -225,3 +225,11 @@ img.card-img-top {
 u:hover {
     color: #1872a4;
 }
+
+/*Log in page*/
+.loginform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}

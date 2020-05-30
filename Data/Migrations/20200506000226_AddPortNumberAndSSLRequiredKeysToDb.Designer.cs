@@ -4,14 +4,16 @@ using GuptaAccounting.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuptaAccounting.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200506000226_AddPortNumberAndSSLRequiredKeysToDb")]
+    partial class AddPortNumberAndSSLRequiredKeysToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace GuptaAccounting.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("AreCheckboxesAndOtherValid")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("Bookkeeping")
                         .HasColumnType("bit");
@@ -47,16 +46,13 @@ namespace GuptaAccounting.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NextStep")
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Other")
-                        .HasColumnType("nvarchar(220)")
-                        .HasMaxLength(220);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Payroll_Services")
                         .HasColumnType("bit");
