@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GuptaAccounting.Pages.Clients
+namespace GuptaAccounting.Pages.Admin
 {
     public class ExistingClientsModel : PageModel
     {

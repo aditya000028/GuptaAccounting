@@ -35,7 +35,7 @@ namespace GuptaAccounting
             services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
-                    options.Conventions.AuthorizeFolder("/Clients");
+                    options.Conventions.AuthorizeFolder("/Admin");
                 });
             services.AddMvc();
         }
