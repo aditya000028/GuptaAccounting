@@ -26,31 +26,31 @@
                             @*<div class="dropdown show">
                                 <button class=" btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">*@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Services">Services</a>@*<span class="caret"></span>*@
-                                @*</button>*@
+                            @*</button>*@
 
-                                @*<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/Services/Bookkeeping">Bookkeeping</a>
-                                    <a class="dropdown-item" href="/Services/PersonalIncomeTaxation">Personal Income Taxation</a>
-                                    <a class="dropdown-item" href="/Services/SelfEmployedBusinessTaxes">Self-Employed Business Taxes</a>*@
-                                    <!-- TODO: Make a drop down within a dropdown
-                        <div class="drop-item dropright">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Tax Returns
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Services/TaxReturns/PST">PST Returns</a>
-                                <a class="dropdown-item" href="/Services/TaxReturns/GST">GST Returns</a>
-                                <a class="dropdown-item" href="/Services/TaxReturns/WCB">WCB Returns</a>
+                            @*<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/Services/Bookkeeping">Bookkeeping</a>
+                                <a class="dropdown-item" href="/Services/PersonalIncomeTaxation">Personal Income Taxation</a>
+                                <a class="dropdown-item" href="/Services/SelfEmployedBusinessTaxes">Self-Employed Business Taxes</a>*@
+                            <!-- TODO: Make a drop down within a dropdown
+                            <div class="drop-item dropright">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tax Returns
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Services/TaxReturns/PST">PST Returns</a>
+                                    <a class="dropdown-item" href="/Services/TaxReturns/GST">GST Returns</a>
+                                    <a class="dropdown-item" href="/Services/TaxReturns/WCB">WCB Returns</a>
+                                </div>
                             </div>
-                        </div>
-                            -->
-                                    @*<a class="dropdown-item" href="/Services/GSTPSTWCB">GST/PST/WCB Returns</a>
-                                    <a class="dropdown-item" href="/Services/TaxReturns">Tax Returns</a>
-                                    <a class="dropdown-item" href="/Services/Payroll">Payroll</a>
-                                    <a class="dropdown-item" href="/Services/PreviousYearFilings">Previous Year Filings</a>
-                                    <a class="dropdown-item" href="/Services/GovernmentRequisiteFormApplications">Government Requisite Form Applications</a>*@
-                                @*</div>
-                            </div>*@
+                                -->
+                            @*<a class="dropdown-item" href="/Services/GSTPSTWCB">GST/PST/WCB Returns</a>
+                                <a class="dropdown-item" href="/Services/TaxReturns">Tax Returns</a>
+                                <a class="dropdown-item" href="/Services/Payroll">Payroll</a>
+                                <a class="dropdown-item" href="/Services/PreviousYearFilings">Previous Year Filings</a>
+                                <a class="dropdown-item" href="/Services/GovernmentRequisiteFormApplications">Government Requisite Form Applications</a>*@
+                            @*</div>
+                                </div>*@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
@@ -67,9 +67,9 @@
             </div>
         </nav>
     </header>
-        <main role="main" class="">
-            @RenderBody()
-        </main>
+    <main role="main" class="">
+        @RenderBody()
+    </main>
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -80,6 +80,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

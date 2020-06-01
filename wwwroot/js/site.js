@@ -64,3 +64,20 @@ function Validate() {
 
     return true;
 };
+
+function DeleteConfirmation() {
+    swal({
+        title: "Are you sure you want to delete this client?",
+        text: "Once deleted, you cannot revert back!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it",
+        cancelButtonText: "No, don't delete it"
+        }).then((result) => {
+            if (result.value) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+};
