@@ -77,9 +77,7 @@ body {
     height: 500px;
     overflow: hidden;
     
-    filter: brightness(70%);
-    
-    
+    filter: brightness(70%);  
 }
 
 .HomeText {
@@ -232,4 +230,19 @@ u:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+
+/*Free consultation page*/
+.FreeConsultationBackgroundImageContainer {
+    max-width: 100%;
+    max-height: 500px;
+    overflow: hidden
+}
+
+
+.FreeConsultationBackgroundImage {
+    /* Add the blur effect */
+    width: 100%;
+    height: auto;
+    filter: brightness(70%);
 }
