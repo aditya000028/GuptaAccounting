@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GuptaAccounting.Data;
 using GuptaAccounting.Model;
+using GuptaAccounting.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -27,7 +28,7 @@ namespace GuptaAccounting.Pages.Clients
         }
 
         public async Task<IActionResult> OnPost()
-        {
+        {            
             if (ModelState.IsValid)
             {
                 var DbClient = await _db.Client.FindAsync(Client.Id);
@@ -42,6 +43,8 @@ namespace GuptaAccounting.Pages.Clients
                 DbClient.Government_Requisite_Form_Applications = Client.Government_Requisite_Form_Applications;
                 DbClient.ContactNumber = Client.ContactNumber;
                 DbClient.NextStep = Client.NextStep;
+                DbClient.Other = Client.Other;
+                DbClient.IsConsultationClient = Client.IsConsultationClient;
 
                 await _db.SaveChangesAsync();
 

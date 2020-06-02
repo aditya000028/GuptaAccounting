@@ -10,10 +10,10 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="~/images/logoCropped.jpg" alt="Gupta Accounting" class="img-fluid" style="width:75px; height:auto" />
+                    <img src="~/images/logo_cropped_transparent.png" alt="Gupta Accounting" class="img-fluid" style="width:75px; height:auto" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -23,34 +23,34 @@
 
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <div class="dropdown show">
-                                <button class=" btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Services <span class="caret"></span>
-                                </button>
+                            @*<div class="dropdown show">
+                                <button class=" btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">*@
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Services">Services</a>@*<span class="caret"></span>*@
+                            @*</button>*@
 
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/Services/Bookkeeping">Bookkeeping</a>
-                                    <a class="dropdown-item" href="/Services/PersonalIncomeTaxation">Personal Income Taxation</a>
-                                    <a class="dropdown-item" href="/Services/SelfEmployedBusinessTaxes">Self-Employed Business Taxes</a>
-                                    <!-- TODO: Make a drop down within a dropdown
-                        <div class="drop-item dropright">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Tax Returns
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Services/TaxReturns/PST">PST Returns</a>
-                                <a class="dropdown-item" href="/Services/TaxReturns/GST">GST Returns</a>
-                                <a class="dropdown-item" href="/Services/TaxReturns/WCB">WCB Returns</a>
-                            </div>
-                        </div>
-                            -->
-                                    <a class="dropdown-item" href="/Services/GSTPSTWCB">GST/PST/WCB Returns</a>
-                                    <a class="dropdown-item" href="/Services/TaxReturns">Tax Returns</a>
-                                    <a class="dropdown-item" href="/Services/Payroll Services">Payroll Services</a>
-                                    <a class="dropdown-item" href="/Services/PreviousYearFilings">Previous Year Filings</a>
-                                    <a class="dropdown-item" href="/Services/GovernmentRequisiteFormApplications">Government Requisite Form Applications</a>
+                            @*<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/Services/Bookkeeping">Bookkeeping</a>
+                                <a class="dropdown-item" href="/Services/PersonalIncomeTaxation">Personal Income Taxation</a>
+                                <a class="dropdown-item" href="/Services/SelfEmployedBusinessTaxes">Self-Employed Business Taxes</a>*@
+                            <!-- TODO: Make a drop down within a dropdown
+                            <div class="drop-item dropright">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tax Returns
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Services/TaxReturns/PST">PST Returns</a>
+                                    <a class="dropdown-item" href="/Services/TaxReturns/GST">GST Returns</a>
+                                    <a class="dropdown-item" href="/Services/TaxReturns/WCB">WCB Returns</a>
                                 </div>
                             </div>
+                                -->
+                            @*<a class="dropdown-item" href="/Services/GSTPSTWCB">GST/PST/WCB Returns</a>
+                                <a class="dropdown-item" href="/Services/TaxReturns">Tax Returns</a>
+                                <a class="dropdown-item" href="/Services/Payroll">Payroll</a>
+                                <a class="dropdown-item" href="/Services/PreviousYearFilings">Previous Year Filings</a>
+                                <a class="dropdown-item" href="/Services/GovernmentRequisiteFormApplications">Government Requisite Form Applications</a>*@
+                            @*</div>
+                                </div>*@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
@@ -67,11 +67,9 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="">
+        @RenderBody()
+    </main>
 
     <footer class="border-top footer text-muted">
         <div class="container">

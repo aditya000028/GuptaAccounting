@@ -4,14 +4,16 @@ using GuptaAccounting.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuptaAccounting.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200425001020_AddedDisplayNameForBookkeeping")]
+    partial class AddedDisplayNameForBookkeeping
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,9 +28,6 @@ namespace GuptaAccounting.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("AreCheckboxesAndOtherValid")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("Bookkeeping")
                         .HasColumnType("bit");
 
@@ -42,21 +41,15 @@ namespace GuptaAccounting.Data.Migrations
                     b.Property<bool>("Government_Requisite_Form_Applications")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsConsultationClient")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NextStep")
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Other")
-                        .HasColumnType("nvarchar(220)")
-                        .HasMaxLength(220);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Payroll_Services")
                         .HasColumnType("bit");
@@ -76,50 +69,6 @@ namespace GuptaAccounting.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Client");
-                });
-
-            modelBuilder.Entity("GuptaAccounting.Models.SMTP", b =>
-                {
-                    b.Property<string>("ServerName")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AuthenticationEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AuthenticationPassword")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EmailFrom")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EmailFromName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EmailTo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EmailToName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PortNumber")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("SSLRequired")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ServerAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ServerName");
-
-                    b.ToTable("SMTP");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

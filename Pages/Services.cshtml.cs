@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GuptaAccounting.Pages.Clients
+namespace GuptaAccounting.Pages
 {
-    public class ConsultationRequestsModel : PageModel
+    public class ServicesModel : PageModel
     {
         public void OnGet()
         {

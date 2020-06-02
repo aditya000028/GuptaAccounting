@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GuptaAccounting.Data;
 using GuptaAccounting.Model;
+using GuptaAccounting.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -28,8 +29,9 @@ namespace GuptaAccounting.Pages.Clients
 
         public async Task<IActionResult> OnPost()
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
+                Client.IsConsultationClient = false;
                 await _db.Client.AddAsync(Client);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("ExistingClients");

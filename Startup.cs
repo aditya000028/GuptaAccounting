@@ -32,7 +32,11 @@ namespace GuptaAccounting
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeFolder("/Admin");
+                });
             services.AddMvc();
         }
 
@@ -54,6 +58,7 @@ namespace GuptaAccounting
             }
 
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
@@ -63,11 +68,6 @@ namespace GuptaAccounting
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
-            
-            
-
-            
-
         }
     }
 }
