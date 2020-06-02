@@ -64,3 +64,17 @@ function Validate() {
 
     return true;
 };
+
+function DatePicker() {
+    var datepicker = new tui.DatePicker('#wrapper', {
+        date: new Date(2017, 1, 10),
+        selectableRanges: [
+            [new Date(2017, 0, 3), new Date(2017, 0, 7)],
+            [new Date(2017, 1, 8), new Date(2017, 4, 8)]
+        ],
+        input: {
+            element: '#datepicker-input',
+            format: 'yyyy-MM-dd'
+        }
+    });
+};
