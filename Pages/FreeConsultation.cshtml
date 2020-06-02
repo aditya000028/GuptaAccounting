@@ -8,9 +8,9 @@
     <script src="~/js/site.js"></script>
 </head>
 
-<div class="container-fluid mb-5">
+<div class="container-fluid">
 
-    <div class="row align-items-center">
+    <div class="row align-items-center border-bottom border-dark">
         <div class="HomeText text-white position-absolute" style="width: 50%;">
             <h1 class="display-4">Talk to me</h1>
             <p class="lead">Take your first step to having a stress-free life by consulting me today</p>
@@ -28,145 +28,146 @@
     }
     else
     {
-<form method="post" class="p-5">
-    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <form method="post" class="p-5">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
-    <h6 class="display-4 col-10 p-2">Personal Information</h6>
-    <div class="form-group row">
-        <div class="col-3">
-            <label asp-for="Client.Name"></label>
-        </div>
-        <div class="col-4">
-            <input type="text" asp-for="Client.Name" class="form-control" />
-        </div>
-        @*Server side validation
+                <h6 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Personal Information</h6>
+                
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Client.Name"></label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" asp-for="Client.Name" class="form-control" placeholder="John Smith" />
+                    </div>
+                    @*Server side validation
             <span class="text-danger col-3" asp-validation-for="Client.Name"></span>*@
-        <div class="text-danger col-3" id="NameError"></div>
-    </div>
-    <div class="form-group row">
-        <div class="col-3">
-            <label asp-for="Client.ContactNumber"></label>
-        </div>
-        <div class="col-2">
-            <input asp-for="Client.ContactNumber" class="form-control" placeholder="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
-        </div>
-        @*Server side validation
+                    <div class="text-danger col-3" id="NameError"></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="Client.ContactNumber"></label>
+                    </div>
+                    <div class="col-2">
+                        <input asp-for="Client.ContactNumber" class="form-control" placeholder="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
+                    </div>
+                    @*Server side validation
             <span class="text-danger col-3" asp-validation-for="Client.ContactNumber"></span>*@
-        <div class="text-danger col-3" id="ContactNumberError"></div>
-    </div>
+                    <div class="text-danger col-3" id="ContactNumberError"></div>
+                </div>
 
-    @*--------------------------------------- Under Construction ---------------------------------------*@
-    <div class="form-group row">
-        <div class="col-3">
-            <label @*asp-for="Client.EmailAddress"*@>Email Address</label>
-        </div>
-        <div class="col-4">
-            <input type="email" @*asp-for="Client.EmailAddress"*@ class="form-control" placeholder="johnsmith@@domain.com" autocomplete="on" />
-        </div>
-        @*Server side validation
+                @*--------------------------------------- Under Construction ---------------------------------------*@
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label @*asp-for="Client.EmailAddress"*@>Email Address</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="email" @*asp-for="Client.EmailAddress"*@ class="form-control" placeholder="johnsmith@@domain.com" autocomplete="on" />
+                    </div>
+                    @*Server side validation
             <span class="text-danger col-3" asp-validation-for="Client.EmailAddress"></span>*@
-        <div class="text-danger col-3" id="EmailAddressError"></div>
-    </div>
+                    <div class="text-danger col-3" id="EmailAddressError"></div>
+                </div>
+            
+            <h3 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Work Type</h3>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="Client.Bookkeeping"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Bookkeeping" class="form-control" />
+                </div>
 
-    <h3 class="display-4 col-10 p-2">Work Type</h3>
-    <div class="form-group row">
-        <div class="col-2">
-            <label asp-for="Client.Bookkeeping"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Bookkeeping" class="form-control" />
-        </div>
+                <div class="col-2">
+                    <label asp-for="Client.GST_PST_WCB_Returns"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.GST_PST_WCB_Returns" class="form-control" />
+                </div>
+                <div class="col-2">
+                    <label asp-for="Client.Payroll_Services"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Payroll_Services" value="true" class="form-control" />
+                </div>
+                @*Server side validation
+                    <span class="text-danger col-3" asp-validation-for="Client.AreCheckboxesAndOtherValid"></span>*@
+                <div class="text-danger col-3" id="CheckboxError"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="Client.Government_Requisite_Form_Applications"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Government_Requisite_Form_Applications" class="form-control" />
+                </div>
 
-        <div class="col-2">
-            <label asp-for="Client.GST_PST_WCB_Returns"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.GST_PST_WCB_Returns" class="form-control" />
-        </div>
-        <div class="col-2">
-            <label asp-for="Client.Payroll_Services"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Payroll_Services" value="true" class="form-control" />
-        </div>
-        @*Server side validation
-            <span class="text-danger col-3" asp-validation-for="Client.AreCheckboxesAndOtherValid"></span>*@
-        <div class="text-danger col-3" id="CheckboxError"></div>
-    </div>
-    <div class="form-group row">
-        <div class="col-2">
-            <label asp-for="Client.Government_Requisite_Form_Applications"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Government_Requisite_Form_Applications" class="form-control" />
-        </div>
+                <div class="col-2">
+                    <label asp-for="Client.Personal_Income_Taxation"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Personal_Income_Taxation" class="form-control" />
+                </div>
 
-        <div class="col-2">
-            <label asp-for="Client.Personal_Income_Taxation"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Personal_Income_Taxation" class="form-control" />
-        </div>
+                <div class="col-2">
+                    <label asp-for="Client.Tax_Returns"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Tax_Returns" class="form-control" />
+                </div>
 
-        <div class="col-2">
-            <label asp-for="Client.Tax_Returns"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Tax_Returns" class="form-control" />
-        </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="Client.Self_Employed_Business_Taxes"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Self_Employed_Business_Taxes" class="form-control" />
+                </div>
 
-    </div>
-    <div class="form-group row">
-        <div class="col-2">
-            <label asp-for="Client.Self_Employed_Business_Taxes"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Self_Employed_Business_Taxes" class="form-control" />
-        </div>
+                <div class="col-2">
+                    <label asp-for="Client.Previous_Year_Filings"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Previous_Year_Filings" class="form-control" />
+                </div>
 
-        <div class="col-2">
-            <label asp-for="Client.Previous_Year_Filings"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Previous_Year_Filings" class="form-control" />
-        </div>
+                <div class="col-2">
+                    <label asp-for="Client.Personal_Income_Taxation"></label>
+                </div>
+                <div class="col-1">
+                    <input asp-for="Client.Personal_Income_Taxation" class="form-control" />
+                </div>
 
-        <div class="col-2">
-            <label asp-for="Client.Personal_Income_Taxation"></label>
-        </div>
-        <div class="col-1">
-            <input asp-for="Client.Personal_Income_Taxation" class="form-control" />
-        </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Client.Other"></label>
+                </div>
+                <div class="col-6">
+                    <input type="text" asp-for="Client.Other" class="form-control" />
+                </div>
+            </div>
 
-    </div>
-    <div class="form-group row">
-        <div class="col-3">
-            <label asp-for="Client.Other"></label>
-        </div>
-        <div class="col-6">
-            <input type="text" asp-for="Client.Other" class="form-control" />
-        </div>
-    </div>
+            <h3 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Consultation Time</h3>
+            @*<div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for=""></label>
+                    </div>
+                    <div class="col-2">
+                        <input asp-for="" class="form-control" />
+                    </div>
+                    Server side validation
+                        <span class="text-danger col-3" asp-validation-for=""></span>
+                    <div class="text-danger col-3" id=""></div>
+                </div>*@
 
-    <h3 class="display-4 col-10 p-2">Consultation Time</h3>
-    @*<div class="form-group row">
-        <div class="col-3">
-            <label asp-for=""></label>
-        </div>
-        <div class="col-2">
-            <input asp-for="" class="form-control" />
-        </div>
-        Server side validation
-            <span class="text-danger col-3" asp-validation-for=""></span>
-        <div class="text-danger col-3" id=""></div>
-    </div>*@
-
-    <div class="form-group row">
-        <div class="col-3 offset-3">
-            <input type="submit" value="Submit" onclick="return Validate()" class="btn btn-primary form-control" />
-        </div>
-    </div>
-</form>
+            <div class="form-group row">
+                <div class="col-3 offset-3">
+                    <input type="submit" value="Submit" onclick="return Validate()" class="btn btn-primary form-control" />
+                </div>
+            </div>
+        </form>
     }
 </div>
 
