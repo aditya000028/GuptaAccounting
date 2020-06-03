@@ -19,10 +19,13 @@
                             <label asp-for="Clients.FirstOrDefault().Name"></label>
                         </th>
                         <th>
-                            <label for="WorkType">Work Type</label>
+                            <label asp-for="Clients.FirstOrDefault().ContactNumber"></label>
                         </th>
                         <th>
-                            <label asp-for="Clients.FirstOrDefault().ContactNumber"></label>
+                            <label asp-for="Clients.FirstOrDefault().EmailAddress"></label>
+                        </th>
+                        <th>
+                            <label for="WorkType">Work Type</label>
                         </th>
                         <th>
 
@@ -35,6 +38,12 @@
                             <tr>
                                 <td>
                                     @Html.DisplayFor(m => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.ContactNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.EmailAddress)
                                 </td>
                                 <td>
                                     @{
@@ -86,9 +95,6 @@
 
                                     }
 
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(m => item.ContactNumber)
                                 </td>
                                 <td>
 
