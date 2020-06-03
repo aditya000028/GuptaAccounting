@@ -22,53 +22,54 @@
     <br />
     @if (Model.FormPosted)
     {
-        <h2>Consultation requested</h2>
-        <br />
-        <p>I will get back to you in 3 business days</p>
+        <div class="justify-content-center p-2 m-2">
+            <h2 class="display-4">Consultation requested.</h2>
+            
+            <p class="lead">I will get back to you in 3 business days.</p>
+        </div>
     }
     else
     {
         <form method="post" class="p-5">
             <div class="text-danger" asp-validation-summary="ModelOnly"></div>
 
-                <h6 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Personal Information</h6>
-                
-                <div class="form-group row">
-                    <div class="col-3">
-                        <label asp-for="Client.Name"></label>
-                    </div>
-                    <div class="col-4">
-                        <input type="text" asp-for="Client.Name" class="form-control" placeholder="John Smith" />
-                    </div>
-                    @*Server side validation
-            <span class="text-danger col-3" asp-validation-for="Client.Name"></span>*@
-                    <div class="text-danger col-3" id="NameError"></div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-3">
-                        <label asp-for="Client.ContactNumber"></label>
-                    </div>
-                    <div class="col-2">
-                        <input asp-for="Client.ContactNumber" class="form-control" placeholder="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
-                    </div>
-                    @*Server side validation
-            <span class="text-danger col-3" asp-validation-for="Client.ContactNumber"></span>*@
-                    <div class="text-danger col-3" id="ContactNumberError"></div>
-                </div>
+            <h6 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Personal Information</h6>
 
-                @*--------------------------------------- Under Construction ---------------------------------------*@
-                <div class="form-group row">
-                    <div class="col-3">
-                        <label @*asp-for="Client.EmailAddress"*@>Email Address</label>
-                    </div>
-                    <div class="col-4">
-                        <input type="email" @*asp-for="Client.EmailAddress"*@ class="form-control" placeholder="johnsmith@@domain.com" autocomplete="on" />
-                    </div>
-                    @*Server side validation
-            <span class="text-danger col-3" asp-validation-for="Client.EmailAddress"></span>*@
-                    <div class="text-danger col-3" id="EmailAddressError"></div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Client.Name"></label>
                 </div>
-            
+                <div class="col-4">
+                    <input type="text" asp-for="Client.Name" class="form-control" placeholder="John Smith" />
+                </div>
+                @*Server side validation
+                    <span class="text-danger col-3" asp-validation-for="Client.Name"></span>*@
+                <div class="text-danger col-3" id="NameError"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Client.ContactNumber"></label>
+                </div>
+                <div class="col-2">
+                    <input asp-for="Client.ContactNumber" class="form-control" placeholder="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
+                </div>
+                @*Server side validation
+                    <span class="text-danger col-3" asp-validation-for="Client.ContactNumber"></span>*@
+                <div class="text-danger col-3" id="ContactNumberError"></div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Client.EmailAddress">Email Address</label>
+                </div>
+                <div class="col-4">
+                    <input type="email" asp-for="Client.EmailAddress" class="form-control" placeholder="johnsmith@@domain.com" autocomplete="on" />
+                </div>
+                @*Server side validation
+                    <span class="text-danger col-3" asp-validation-for="Client.EmailAddress"></span>*@
+                <div class="text-danger col-3" id="EmailAddressError"></div>
+            </div>
+
             <h3 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Work Type</h3>
             <div class="form-group row">
                 <div class="col-2">

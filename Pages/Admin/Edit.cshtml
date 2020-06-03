@@ -16,15 +16,45 @@
     <form method="post">
         <input type="hidden" asp-for="Client.Id" />
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+        <h6 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Personal Information</h6>
+
         <div class="form-group row">
             <div class="col-3">
                 <label asp-for="Client.Name"></label>
             </div>
-            <div class="col-6">
-                <input type="text" asp-for="Client.Name" class="form-control" autofocus autocomplete="on" />
+            <div class="col-4">
+                <input type="text" asp-for="Client.Name" class="form-control" placeholder="John Smith" />
             </div>
-            <span class="text-danger col-3" asp-validation-for="Client.Name"></span>
+            @*Server side validation
+                <span class="text-danger col-3" asp-validation-for="Client.Name"></span>*@
+            <div class="text-danger col-3" id="NameError"></div>
         </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Client.ContactNumber"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Client.ContactNumber" class="form-control" placeholder="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
+            </div>
+            @*Server side validation
+                <span class="text-danger col-3" asp-validation-for="Client.ContactNumber"></span>*@
+            <div class="text-danger col-3" id="ContactNumberError"></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Client.EmailAddress"></label>
+            </div>
+            <div class="col-4">
+                <input type="email" asp-for="Client.EmailAddress" class="form-control" autocomplete="on" />
+            </div>
+            @*Server side validation
+                <span class="text-danger col-3" asp-validation-for="Client.EmailAddress"></span>*@
+            <div class="text-danger col-3" id="EmailAddressError"></div>
+        </div>
+
+        <h3 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Work Type</h3>
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Client.Bookkeeping"></label>
@@ -39,14 +69,15 @@
             <div class="col-1">
                 <input asp-for="Client.GST_PST_WCB_Returns" class="form-control" />
             </div>
-
             <div class="col-2">
                 <label asp-for="Client.Payroll_Services"></label>
             </div>
             <div class="col-1">
-                <input asp-for="Client.Payroll_Services" class="form-control" />
+                <input asp-for="Client.Payroll_Services" value="true" class="form-control" />
             </div>
-            <span class="text-danger col 3" id="CheckboxError"></span>
+            @*Server side validation
+                <span class="text-danger col-3" asp-validation-for="Client.AreCheckboxesAndOtherValid"></span>*@
+            <div class="text-danger col-3" id="CheckboxError"></div>
         </div>
         <div class="form-group row">
             <div class="col-2">
@@ -99,29 +130,39 @@
                 <label asp-for="Client.Other"></label>
             </div>
             <div class="col-6">
-                <input type="text" asp-for="Client.Other" class="form-control" autocomplete="on" />
+                <input type="text" asp-for="Client.Other" class="form-control" />
             </div>
         </div>
-        <div class="form-group row">
-            <div class="col-3">
-                <label asp-for="Client.NextStep"></label>
+
+        @if (!Model.Client.IsConsultationClient)
+        {
+            <h3 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Next Step</h3>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="Client.NextStep"></label>
+                </div>
+                <div class="col-6">
+                    <input type="text" asp-for="Client.NextStep" class="form-control" />
+                </div>
             </div>
-            <div class="col-6">
-                <input type="text" asp-for="Client.NextStep" class="form-control" autocomplete="on" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-3">
-                <label asp-for="Client.ContactNumber"></label>
-            </div>
-            <div class="col-6">
-                <input asp-for="Client.ContactNumber" class="form-control" placeholder="111-222-3333" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
-            </div>
-            <span class="text-danger col-3" asp-validation-for="Client.ContactNumber"></span>
-        </div>
+        }
+
+        <h3 class="display-4 d-inline-flex p-4 border-bottom border-dark mb-4">Consultation Time</h3>
+        @*<div class="form-group row">
+                <div class="col-3">
+                    <label asp-for=""></label>
+                </div>
+                <div class="col-2">
+                    <input asp-for="" class="form-control" />
+                </div>
+                Server side validation
+                    <span class="text-danger col-3" asp-validation-for=""></span>
+                <div class="text-danger col-3" id=""></div>
+            </div>*@
+
         <div class="form-group row">
             <div class="col-3 offset-3">
-                <input type="submit" value="Update" onclick="return CheckCheckboxes()" class="btn btn-primary form-control" />
+                <input type="submit" value="Update" onclick="return Validate()" class="btn btn-primary form-control" />
             </div>
             <div class="col-3">
                 <a href="javascript:history.go(-1)" class="btn btn-success form-control">Back to List</a>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Linq;
 using System.Threading.Tasks;
 using GuptaAccounting.Data;
@@ -27,7 +28,7 @@ namespace GuptaAccounting.Pages.Clients
             Client = await _db.Client.FindAsync(id);
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task OnPost()
         {            
             if (ModelState.IsValid)
             {
@@ -42,17 +43,14 @@ namespace GuptaAccounting.Pages.Clients
                 DbClient.GST_PST_WCB_Returns = Client.GST_PST_WCB_Returns;
                 DbClient.Government_Requisite_Form_Applications = Client.Government_Requisite_Form_Applications;
                 DbClient.ContactNumber = Client.ContactNumber;
+                DbClient.EmailAddress = Client.EmailAddress;
                 DbClient.NextStep = Client.NextStep;
                 DbClient.Other = Client.Other;
-                DbClient.IsConsultationClient = Client.IsConsultationClient;
 
                 await _db.SaveChangesAsync();
 
-                return RedirectToPage("ExistingClients");
-            }
-            else
-            {
-                return Page();
+                //To do
+                //Redirect back to previous page, whatever that may be
             }
         }
     }
