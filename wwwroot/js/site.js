@@ -14,17 +14,21 @@ function Validate() {
     var Other = document.getElementById("Client_Other");
     var Name = document.getElementById("Client_Name");
     var ContactNumber = document.getElementById("Client_ContactNumber");
+    var EmailAddress = document.getElementById("Client_EmailAddress");
 
 
     var CheckboxError = document.getElementById("CheckboxError");
     var NameError = document.getElementById("NameError");
     var ContactNumberError = document.getElementById("ContactNumberError");
+    var EmailAddressError = document.getElementById("EmailAddressError");
 
-    var PhoneRegEx = "[0-9]{3}-[0-9]{3}-[0-9]{4}$";
+    var PhoneRegEx = /[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    var EmailAddressRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     var NameBool = true;
     var ContactNumberBool = true;
     var CheckboxBool = true;
+    var EmailAddressBool = true;
 
     if (Name.value == "") {
         NameError.innerHTML = "The 'Name' field is required";
@@ -59,7 +63,15 @@ function Validate() {
         CheckboxError.innerHTML = "";
     }
 
-    if (ContactNumberBool == false || NameBool == false || CheckboxBool == false)
+    if (EmailAddress.value == "") {
+        EmailAddressError.innerHTML = "The 'Email Address' field is required";
+    } else if (!(EmailAddress.value.match(EmailAddressRegEx))) {
+        EmailAddressError.innerHTML = "Invalid Email Address";
+    } else {
+        EmailAddressError.innerHTML = "";
+    }
+
+    if (ContactNumberBool == false || NameBool == false || CheckboxBool == false || EmailAddressBool == false)
         return false;
 
     return true;

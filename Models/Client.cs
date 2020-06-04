@@ -19,6 +19,12 @@ namespace GuptaAccounting.Model
         public string Name { get; set; }
 
         [Required]
+        [DisplayName("Email Address")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(320, ErrorMessage = "Cannot exceed more than 320 characters")]
+        public string EmailAddress { get; set; }
+
+        [Required]
         [DisplayName("Bookkeeping")]
         public bool Bookkeeping { get; set; }
 

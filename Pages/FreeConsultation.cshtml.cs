@@ -18,6 +18,9 @@ namespace GuptaAccounting.Pages
     {
         private readonly ApplicationDbContext _db;
 
+        [BindProperty]
+        public bool FormPosted { get; set; }
+
         public FreeConsultationModel(ApplicationDbContext db)
         {
             _db = db;
@@ -28,7 +31,7 @@ namespace GuptaAccounting.Pages
 
         public void OnGet()
         {
-
+            FormPosted = false;
         }
 
         private void SendEmail()
@@ -229,21 +232,15 @@ namespace GuptaAccounting.Pages
             client.Dispose();
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task OnPost()
         {
             if (ModelState.IsValid)
             {
                 Client.IsConsultationClient = true;
                 await _db.Client.AddAsync(Client);
                 await _db.SaveChangesAsync();
-
+                FormPosted = true;
                 SendEmail();
-
-                return RedirectToPage("Index");
-            }
-            else
-            {
-                return Page();
             }
         }
     }
