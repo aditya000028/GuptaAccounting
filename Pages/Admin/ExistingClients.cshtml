@@ -14,6 +14,10 @@
             <a asp-page="Create" class="btn btn-info form-control text-white d-inline-block">Create New Client</a>
         </div>
     </div>
+
+    @*This is my table without the use of datatables jquery api
+
+
     <div class="col-12 border p-3 mt-3">
         <form method="post">
             @if (Model.Clients.Count() > 0)
@@ -124,6 +128,26 @@
             }
 
         </form>
+    </div>*@
+
+    <div class="col-12 border p-3 mt-3">
+        <table class="table table-striped border" id="DT_load">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                    <th>Work Type</th>
+                    <th>Next Step</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+        </table>
     </div>
 
 </div>
+
+@section Scripts{
+    <script src="~/js/LoadDatatable.js"></script>
+}
