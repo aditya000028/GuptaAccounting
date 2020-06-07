@@ -9,110 +9,133 @@
         <br />
         <h1 class="text-info">Consultation Requests</h1>
     </div>
-    <div class="col-12 border p-3 mt-3">
-        <form method="post">
-            @if (Model.Clients.Count() > 0)
-            {
-                <table class="table table-striped border">
-                    <tr class="table-secondary">
-                        <th>
-                            <label asp-for="Clients.FirstOrDefault().Name"></label>
-                        </th>
-                        <th>
-                            <label asp-for="Clients.FirstOrDefault().ContactNumber"></label>
-                        </th>
-                        <th>
-                            <label asp-for="Clients.FirstOrDefault().EmailAddress"></label>
-                        </th>
-                        <th>
-                            <label for="WorkType">Work Type</label>
-                        </th>
-                        <th>
 
-                        </th>
-                    </tr>
-                    @foreach (var item in Model.Clients)
-                    {
-                        if (item.IsConsultationClient == true)
+
+    @*This is my table without the use of datatables jquery api
+
+        <div class="col-12 border p-3 mt-3">
+            <form method="post">
+                @if (Model.Clients.Count() > 0)
+                {
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                <label asp-for="Clients.FirstOrDefault().Name"></label>
+                            </th>
+                            <th>
+                                <label asp-for="Clients.FirstOrDefault().ContactNumber"></label>
+                            </th>
+                            <th>
+                                <label asp-for="Clients.FirstOrDefault().EmailAddress"></label>
+                            </th>
+                            <th>
+                                <label for="WorkType">Work Type</label>
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                        @foreach (var item in Model.Clients)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(m => item.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(m => item.ContactNumber)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(m => item.EmailAddress)
-                                </td>
-                                <td>
-                                    @{
-                                        if (item.Bookkeeping == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Bookkeeping)
-                                            <br />
-                                        }
-                                        if (item.Personal_Income_Taxation == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Personal_Income_Taxation);
-                                            <br />
-                                        }
-                                        if (item.Self_Employed_Business_Taxes == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Self_Employed_Business_Taxes);
-                                            <br />
-                                        }
-                                        if (item.GST_PST_WCB_Returns == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.GST_PST_WCB_Returns);
-                                            <br />
-                                        }
-                                        if (item.Tax_Returns == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Tax_Returns);
-                                            <br />
-                                        }
-                                        if (item.Payroll_Services == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Payroll_Services);
-                                            <br />
-                                        }
-                                        if (item.Previous_Year_Filings == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Previous_Year_Filings);
-                                            <br />
-                                        }
-                                        if (item.Government_Requisite_Form_Applications == true)
-                                        {
-                                            @Html.DisplayNameFor(m => item.Government_Requisite_Form_Applications);
-                                            <br />
-                                        }
-                                        if (item.Other != null)
-                                        {
-                                            @Html.DisplayFor(m => item.Other);
+                            if (item.IsConsultationClient == true)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(m => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(m => item.ContactNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(m => item.EmailAddress)
+                                    </td>
+                                    <td>
+                                        @{
+                                            if (item.Bookkeeping == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Bookkeeping)
+                                                <br />
+                                            }
+                                            if (item.Personal_Income_Taxation == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Personal_Income_Taxation);
+                                                <br />
+                                            }
+                                            if (item.Self_Employed_Business_Taxes == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Self_Employed_Business_Taxes);
+                                                <br />
+                                            }
+                                            if (item.GST_PST_WCB_Returns == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.GST_PST_WCB_Returns);
+                                                <br />
+                                            }
+                                            if (item.Tax_Returns == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Tax_Returns);
+                                                <br />
+                                            }
+                                            if (item.Payroll_Services == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Payroll_Services);
+                                                <br />
+                                            }
+                                            if (item.Previous_Year_Filings == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Previous_Year_Filings);
+                                                <br />
+                                            }
+                                            if (item.Government_Requisite_Form_Applications == true)
+                                            {
+                                                @Html.DisplayNameFor(m => item.Government_Requisite_Form_Applications);
+                                                <br />
+                                            }
+                                            if (item.Other != null)
+                                            {
+                                                @Html.DisplayFor(m => item.Other);
+
+                                            }
 
                                         }
 
-                                    }
-
-                                </td>
-                                <td>
-
+                                    </td>
+                                    <td>
+                                      
                                     <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return DeleteConfirmation()" class="btn btn-danger btn-sm">Delete</button>
                                     <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Edit</a>
                                 </td>
                             </tr>
                         }
-                    }
-                </table>
-            }
-            else
-            {
-                <br />
-                <p>No clients to consult</p>
-            }
+                    </table>
+                }
+                else
+                {
+                    <br />
+                    <p>No clients to consult</p>
+                }
 
-        </form>
+            </form>
+        </div>*@
+
+
+    <div class="col-12 border p-3 mt-3">
+        <table class="table table-striped border" id="DT_load">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                    <th>Work Type</th>
+                    <th>Next Step</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
     </div>
 
 </div>
+
+@section Scripts {
+    <script src="~/js/LoadDatatable.js"></script>
+}
