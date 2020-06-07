@@ -1,6 +1,16 @@
 ﻿var dataTable;
+var EmptyDataTableMessage;
 
 $(document).ready(function () {
+
+    //Set the empty datatable message depending on where we are on the site
+    EmptyDataTableMessage = String(window.location.href);
+    if (EmptyDataTableMessage.includes("Existing")) {
+        EmptyDataTableMessage = "No existing clients to show";
+    } else {
+        EmptyDataTableMessage = "No consultation clients to show";
+    }
+
     loadDataTable();
 });
 
@@ -19,8 +29,15 @@ function loadDataTable() {
             //these are all column names filled with data
             { "data": "name", "width": "20%" },
             { "data": "contactNumber", "width": "15%" },
-            { "data": "emailAddress", "width": "20%" },
             {
+                "data": "emailAddress",
+                "render": function (data) {
+                    return `<a href="mailto:${data}">${data}</a>`
+                },
+                "width": "20%"
+            },
+            {
+                //This is the work type column
                 "data": null,
                 "width": "20%",
                 "render": function (data, type, row) {
@@ -52,7 +69,7 @@ function loadDataTable() {
                     if (row.other != "") {
                         html.push(row.other);
                     }
-                      // continue with all options
+
                     return html.join('<br>');
                 }
             },
@@ -73,7 +90,7 @@ function loadDataTable() {
             }
         ],
         "language": {
-            "emptyTable": "No existing clients"
+            "emptyTable": EmptyDataTableMessage
         },
         "width": "100%"
     });
