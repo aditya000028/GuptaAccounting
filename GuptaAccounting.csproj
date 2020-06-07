@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AlertifyJS" Version="1.13.1" />
     <PackageReference Include="Google.Apis.Gmail.v1" Version="1.45.0.1927" />
     <PackageReference Include="IdentityModel" Version="4.2.0" />
     <PackageReference Include="MailKit" Version="2.6.0" />
