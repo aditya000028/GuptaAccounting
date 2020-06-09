@@ -4,9 +4,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using GuptaAccounting.Data;
+using GuptaAccounting.Data.Migrations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GuptaAccounting.Controllers
 {
@@ -24,14 +26,37 @@ namespace GuptaAccounting.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             //To do
             //Need to determine where i am on the site so i can return consultation clients
             //for the consultaiton clients page too
             return Json(new
             {
-                data = _db.Client.Where(Client => Client.IsConsultationClient == false).ToList()
+                data = await _db.Client.Where(Client => Client.IsConsultationClient == true).ToListAsync()
+            });
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var ClientFromDb = await _db.Client.FindAsync(id);
+            if(ClientFromDb == null)
+            {
+                return Json(new
+                {
+                    success = false,
+                    message = "Unable to delete client"
+                });
+            }
+
+            _db.Client.Remove(ClientFromDb);
+            await _db.SaveChangesAsync();
+
+            return Json(new
+            {
+                success = true,
+                message = "Client successfully deleted"
             });
         }
     }

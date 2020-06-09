@@ -82,8 +82,8 @@ function loadDataTable() {
                 "render": function (data) { //this data will have the id of the client
                     //we want to return a div with 2 buttons
                     return ` <div class="text-center">
-                                <a href="Admin/Edit?id=${data}" class="btn btn-success text-white p-1" style="cursor:pointer;width:90px">Edit</a>
-                                <a class="btn btn-danger text-white p-1" style="width:90px">Delete</a>
+                                <a href="/Admin/Edit?id=${data}" class="btn btn-success text-white p-1" style="cursor:pointer;width:90px">Edit</a>
+                                <a class="btn btn-danger text-white p-1" style="cursor:pointer;width:90px" onclick=Delete('/api/client?id=+${data}')>Delete</a>
                              </div>`;
                     //make the render have a width of 30%             
                 }, "width": "30%"
@@ -93,5 +93,30 @@ function loadDataTable() {
             "emptyTable": EmptyDataTableMessage
         },
         "width": "100%"
+    });
+};
+
+function Delete(url) {
+    swal({
+        title: "Are you sure you want to delete this client?",
+        text: "Once deleted, you cannot revert back!",
+        icon: "warning",
+        dangerMode: true,
+        buttons: true
+    }).then((result) => {
+        if (result) {
+            $.ajax({
+                type: "DELETE",
+                url: url,
+                success: function (data) {
+                    if (data.success) {
+                        toastr.success(data.message);
+                        dataTable.ajax.reload();
+                    } else {
+                        toastr.error(data.message);
+                    }
+                }
+            });
+        }
     });
 };
