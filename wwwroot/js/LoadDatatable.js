@@ -4,12 +4,7 @@ var EmptyDataTableMessage;
 $(document).ready(function () {
 
     //Set the empty datatable message depending on where we are on the site
-    EmptyDataTableMessage = String(window.location.href);
-    if (EmptyDataTableMessage.includes("Existing")) {
-        EmptyDataTableMessage = "No existing clients to show";
-    } else {
-        EmptyDataTableMessage = "No consultation clients to show";
-    }
+    EmptyDataTableMessage = "No clients to manage";
 
     loadDataTable();
 });
@@ -26,6 +21,17 @@ function loadDataTable() {
         },
         //this is an array
         "columns": [
+            {
+                "data": "isConsultationClient",
+                "render": function (data) {
+                    if (data == true) {
+                        return "Yes";
+                    } else {
+                        return "No";
+                    }
+                },
+                "width": "10%"
+            },
             //these are all column names filled with data
             { "data": "name", "width": "20%" },
             { "data": "contactNumber", "width": "15%" },
@@ -82,7 +88,7 @@ function loadDataTable() {
                 "render": function (data) { //this data will have the id of the client
                     //we want to return a div with 2 buttons
                     return ` <div class="text-center">
-                                <a href="/Admin/Edit?id=${data}" class="btn btn-success text-white p-1" style="cursor:pointer;width:90px">Edit</a>
+                                <a href="/Admin/Edit?id=${data}" class="btn btn-success text-white p-1 m-2" style="cursor:pointer;width:90px">Edit</a>
                                 <a class="btn btn-danger text-white p-1" style="cursor:pointer;width:90px" onclick=Delete('/api/client?id=+${data}')>Delete</a>
                              </div>`;
                     //make the render have a width of 30%             

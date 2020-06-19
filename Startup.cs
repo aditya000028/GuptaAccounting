@@ -37,11 +37,12 @@ namespace GuptaAccounting
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            //Need to be logged in to access the admin folder
+            //Need to be logged in to access private folders
             services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AuthorizeFolder("/Admin");
+                    options.Conventions.AuthorizeAreaFolder("Identity", "/");
                 });
 
             services.AddMvc();

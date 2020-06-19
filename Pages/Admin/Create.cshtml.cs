@@ -34,7 +34,7 @@ namespace GuptaAccounting.Pages.Clients
                 Client.IsConsultationClient = false;
                 await _db.Client.AddAsync(Client);
                 await _db.SaveChangesAsync();
-                return RedirectToPage("ExistingClients");
+                return RedirectToPage("ManageClients");
             }
             else
             {
