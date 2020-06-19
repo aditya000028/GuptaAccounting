@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace GuptaAccounting.Pages.Clients
+namespace GuptaAccounting.Pages.Admin
 {
-    public class ExistingClientsModel : PageModel
+    public class ManageClientsModel : PageModel
     {
         private readonly ApplicationDbContext _db;
 
-        public ExistingClientsModel(ApplicationDbContext db)
+        public ManageClientsModel(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -30,7 +30,7 @@ namespace GuptaAccounting.Pages.Clients
         {
             var Client_to_delete = await _db.Client.FindAsync(id);
 
-            if(Client_to_delete == null)
+            if (Client_to_delete == null)
             {
                 return NotFound();
             }
@@ -39,7 +39,7 @@ namespace GuptaAccounting.Pages.Clients
                 _db.Client.Remove(Client_to_delete);
                 await _db.SaveChangesAsync();
 
-                return RedirectToPage("ExistingClients");
+                return RedirectToPage("ManageClients");
             }
         }
     }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using GuptaAccounting.Data;
-using GuptaAccounting.Data.Migrations;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,12 +22,9 @@ namespace GuptaAccounting.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            //To do
-            //Need to determine where i am on the site so i can return consultation clients
-            //for the consultaiton clients page too
             return Json(new
             {
-                data = await _db.Client.Where(Client => Client.IsConsultationClient == true).ToListAsync()
+                data = await _db.Client.ToListAsync()
             });
         }
 
