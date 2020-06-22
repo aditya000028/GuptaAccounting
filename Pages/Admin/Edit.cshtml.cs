@@ -44,7 +44,7 @@ namespace GuptaAccounting.Pages.Clients
                 DbClient.Government_Requisite_Form_Applications = Client.Government_Requisite_Form_Applications;
                 DbClient.ContactNumber = Client.ContactNumber;
                 DbClient.EmailAddress = Client.EmailAddress;
-                DbClient.NextStep = Client.NextStep;
+                DbClient.Notes = Client.Notes;
                 DbClient.Other = Client.Other;
 
                 await _db.SaveChangesAsync();
