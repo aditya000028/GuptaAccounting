@@ -79,7 +79,7 @@ function loadDataTable() {
                     return html.join('<br>');
                 }
             },
-            { "data": "nextStep", "width": "20%" },
+            { "data": "notes", "width": "20%" },
             //the last column is the delete and edit button
             {
                 //need to pass the id when editing

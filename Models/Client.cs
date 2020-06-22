@@ -60,8 +60,8 @@ namespace GuptaAccounting.Model
         public string Other { get; set; }
 
         [StringLength(150, ErrorMessage = "Cannot exceed more than 150 characters")]
-        [DisplayName("Next Step")]
-        public string NextStep { get; set; }
+        [DisplayName("Notes")]
+        public string Notes { get; set; }
 
         [Required]
         [DisplayName("Contact Number")]
