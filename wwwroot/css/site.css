@@ -74,29 +74,31 @@ body {
 .HomeBackgroundImage {
     /* Add the blur effect */
     width: 100%;
-    height: auto;
-    min-height: 100px;
-    filter: brightness(30%);
+    height: 500px;
+    overflow: hidden;
     
-    
+    filter: brightness(70%);  
 }
 
 .HomeText {
     /*background-color: rgb(0,0,0); Fallback color
-    background-color: rgba(0,0,0, 0.4); Black w/opacity/see-through */
-    color: #1872a4;
-    font-weight: bold;
-    font-family: Forte;
-    /*border: 3px solid #f1f1f1;*/
+    background-color: rgba(0,0,0, 0.4);
+    border: 3px solid #f1f1f1;
     position: absolute;
     top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    width: 80%;
+    width: 70%;
     padding: 20px;
     text-align: center;
-    font-size: 5vw;
+    font-size: 5vw;*/
+    z-index: 2;
+    padding: 20px;
+    margin: 20px;
+
+    background-color: rgba(0,0,0, 0.7);
+    border: 3px solid #f1f1f1;
 }
 
 .LogoHomeTransparent {
@@ -187,4 +189,60 @@ img.card-img-top {
     width: 70px;
     height: auto;
     padding: 10px;
+}
+
+/*Services Page*/
+
+.ServicesHeader {
+    background-color: #6196ca;
+}
+
+.ServicesText {
+    z-index: 4;
+    position: absolute;
+    height: inherit;
+    width: 50%;
+}
+
+.ServicesPicture {
+    z-index: 3;
+    background-color: #6196ca;
+}
+
+.SideNav {
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 30%;
+
+    width: 100%
+}
+
+u:hover {
+    color: #1872a4;
+}
+
+/*Log in page*/
+.loginform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+/*Free consultation page*/
+.FreeConsultationBackgroundImageContainer {
+    max-width: 100%;
+    max-height: 500px;
+    overflow: hidden
+}
+
+
+.FreeConsultationBackgroundImage {
+    /* Add the blur effect */
+    width: 100%;
+    height: auto;
+    filter: brightness(70%);
 }

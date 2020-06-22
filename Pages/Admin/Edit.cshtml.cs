@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Linq;
 using System.Threading.Tasks;
 using GuptaAccounting.Data;
@@ -14,12 +15,9 @@ namespace GuptaAccounting.Pages.Clients
     {
         private readonly ApplicationDbContext _db;
 
-        public CheckboxValidation validation;
-
         public EditModel(ApplicationDbContext db)
         {
             _db = db;
-            validation = new CheckboxValidation();
         }
 
         [BindProperty]
@@ -30,19 +28,8 @@ namespace GuptaAccounting.Pages.Clients
             Client = await _db.Client.FindAsync(id);
         }
 
-        public async Task<IActionResult> OnPost()
-        {
-            if (validation.CheckCheckboxes(Client.Bookkeeping,
-                    Client.Payroll_Services,
-                    Client.Personal_Income_Taxation,
-                    Client.Previous_Year_Filings,
-                    Client.Self_Employed_Business_Taxes,
-                    Client.Tax_Returns,
-                    Client.GST_PST_WCB_Returns,
-                    Client.Government_Requisite_Form_Applications,
-                    Client.Other) == false)
-                return Page();
-            
+        public async Task OnPost()
+        {            
             if (ModelState.IsValid)
             {
                 var DbClient = await _db.Client.FindAsync(Client.Id);
@@ -56,17 +43,14 @@ namespace GuptaAccounting.Pages.Clients
                 DbClient.GST_PST_WCB_Returns = Client.GST_PST_WCB_Returns;
                 DbClient.Government_Requisite_Form_Applications = Client.Government_Requisite_Form_Applications;
                 DbClient.ContactNumber = Client.ContactNumber;
-                DbClient.NextStep = Client.NextStep;
+                DbClient.EmailAddress = Client.EmailAddress;
+                DbClient.Notes = Client.Notes;
                 DbClient.Other = Client.Other;
-                DbClient.IsConsultationClient = Client.IsConsultationClient;
 
                 await _db.SaveChangesAsync();
 
-                return RedirectToPage("ExistingClients");
-            }
-            else
-            {
-                return Page();
+                //To do
+                //Redirect back to previous page, whatever that may be
             }
         }
     }

@@ -1,8 +1,102 @@
 ﻿@page
-@model GuptaAccounting.Pages.ServicesModel
+@model ServicesModel
 @{
     ViewData["Title"] = "Services";
 }
 
-<h1>Services</h1>
+<div class="container-fluid">
+    <div class="row ServicesHeader align-items-center">
+        <div class="ServicesText d-inline-block p-5 text-dark align-middle">
+            <h1 class="display-4">Services</h1>
+            <p class="lead">I offer many services to cover all your needs and keep your life stress free</p>
+        </div>
+        <div class="row ServicesPicture justify-content-end">
+            <img src="~/images/Services.jpg" class="d-inline-block float-right" />
+        </div>
+    </div>
+    <div class="p-5">
+        <div class="row">
+            <div class="col-4">
+                <div id="SideNav" class="SideNav">
+                    <h4 class="content">Contents</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#Bookkeeping"><u>Bookkeeping</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#PersonalIncomeTaxation"><u>Personal Income Taxation</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#SelfEmployedBusinessTaxes"><u>Self-Employed Business Taxes</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#GST-PST-WCB-Returns"><u>GST/PST/WCB Returns</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" id="#TaxReturns" href="#TaxReturns"><u>Tax Returns</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#Payroll"><u>Payroll</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#PreviousYearFilings"><u>Previous Year Filings</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark VerticalNavLinks" href="#GovernmentRequisiteFormApplications"><u>Government Requisite Form Applications</u></a>
+                        </li>
+                    </ul>
+                </div>
 
+            </div>
+            <div class="col-8">
+                <h2 class="display-4 " id="Bookkeeping">Bookkeeping</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="PersonalIncomeTaxation">Personal Income Taxation</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="SelfEmployedBusinessTaxes">Self-Employed Business Taxes</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="GST-PST-WCB-Returns">GST/PST/WCB Returns</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="TaxReturns">Tax Returns</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="Payroll">Payroll</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="PreviousYearFilings">Previous Year Filings</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+                <h2 class="display-4 " id="GovernmentRequisiteFormApplications">Government Requisite Form Applications</h2>
+                <hr />
+                <p>I do bookkeeping stuff</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function () { myFunction() };
+
+    // Get the header
+    var SideNav = document.getElementById("SideNav");
+
+    var TaxReturnsTag = document.getElementById("PersonalIncomeTaxation");
+
+    // Get the offset position of the navbar
+    var sticky = TaxReturnsTag.offsetTop;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+        if (window.pageYOffset >= sticky + 200) {
+            SideNav.classList.add("sticky");
+        } else {
+            SideNav.classList.remove("sticky");
+        }
+    }
+</script>

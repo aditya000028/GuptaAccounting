@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GuptaAccounting.Utilities;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -13,7 +15,14 @@ namespace GuptaAccounting.Model
         public int Id { get; set; }
 
         [Required]
+        [StringLength(50, ErrorMessage = "Cannot exceed more than 50 characters")]
         public string Name { get; set; }
+
+        [Required]
+        [DisplayName("Email Address")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(320, ErrorMessage = "Cannot exceed more than 320 characters")]
+        public string EmailAddress { get; set; }
 
         [Required]
         [DisplayName("Bookkeeping")]
@@ -47,10 +56,12 @@ namespace GuptaAccounting.Model
         [DisplayName("Govt. Requisite Form Applicaitons")]
         public bool Government_Requisite_Form_Applications { get; set; }
 
+        [StringLength(220, ErrorMessage = "Cannot exceed more than 220 characters")]
         public string Other { get; set; }
 
-        [DisplayName("Next Step")]
-        public string NextStep { get; set; }
+        [StringLength(150, ErrorMessage = "Cannot exceed more than 150 characters")]
+        [DisplayName("Notes")]
+        public string Notes { get; set; }
 
         [Required]
         [DisplayName("Contact Number")]
@@ -60,5 +71,15 @@ namespace GuptaAccounting.Model
         [Required]
         [DisplayName("Consultation Client")]
         public bool IsConsultationClient { get; set; }
+
+        [CheckboxAndOtherValidation(nameof(Bookkeeping),
+    nameof(Personal_Income_Taxation),
+    nameof(Self_Employed_Business_Taxes),
+    nameof(GST_PST_WCB_Returns),
+    nameof(Tax_Returns),
+    nameof(Payroll_Services),
+    nameof(Previous_Year_Filings),
+    nameof(Government_Requisite_Form_Applications), ErrorMessage = "At least one of the checkboxes or the 'Other' field must be filled")]
+        public bool AreCheckboxesAndOtherValid { get; set; }
     }
 }

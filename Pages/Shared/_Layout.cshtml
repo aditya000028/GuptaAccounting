@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="shortcut icon" href="~/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-4">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
                     <img src="~/images/logo_cropped_transparent.png" alt="Gupta Accounting" class="img-fluid" style="width:75px; height:auto" />
@@ -25,32 +29,32 @@
                         <li class="nav-item">
                             @*<div class="dropdown show">
                                 <button class=" btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">*@
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Services">Services </a>@*<span class="caret"></span>*@
-                                @*</button>*@
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Services">Services</a>@*<span class="caret"></span>*@
+                            @*</button>*@
 
-                                @*<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/Services/Bookkeeping">Bookkeeping</a>
-                                    <a class="dropdown-item" href="/Services/PersonalIncomeTaxation">Personal Income Taxation</a>
-                                    <a class="dropdown-item" href="/Services/SelfEmployedBusinessTaxes">Self-Employed Business Taxes</a>*@
-                                    <!-- TODO: Make a drop down within a dropdown
-                        <div class="drop-item dropright">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Tax Returns
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Services/TaxReturns/PST">PST Returns</a>
-                                <a class="dropdown-item" href="/Services/TaxReturns/GST">GST Returns</a>
-                                <a class="dropdown-item" href="/Services/TaxReturns/WCB">WCB Returns</a>
+                            @*<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/Services/Bookkeeping">Bookkeeping</a>
+                                <a class="dropdown-item" href="/Services/PersonalIncomeTaxation">Personal Income Taxation</a>
+                                <a class="dropdown-item" href="/Services/SelfEmployedBusinessTaxes">Self-Employed Business Taxes</a>*@
+                            <!-- TODO: Make a drop down within a dropdown
+                            <div class="drop-item dropright">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Tax Returns
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/Services/TaxReturns/PST">PST Returns</a>
+                                    <a class="dropdown-item" href="/Services/TaxReturns/GST">GST Returns</a>
+                                    <a class="dropdown-item" href="/Services/TaxReturns/WCB">WCB Returns</a>
+                                </div>
                             </div>
-                        </div>
-                            -->
-                                    @*<a class="dropdown-item" href="/Services/GSTPSTWCB">GST/PST/WCB Returns</a>
-                                    <a class="dropdown-item" href="/Services/TaxReturns">Tax Returns</a>
-                                    <a class="dropdown-item" href="/Services/Payroll">Payroll</a>
-                                    <a class="dropdown-item" href="/Services/PreviousYearFilings">Previous Year Filings</a>
-                                    <a class="dropdown-item" href="/Services/GovernmentRequisiteFormApplications">Government Requisite Form Applications</a>*@
-                                @*</div>
-                            </div>*@
+                                -->
+                            @*<a class="dropdown-item" href="/Services/GSTPSTWCB">GST/PST/WCB Returns</a>
+                                <a class="dropdown-item" href="/Services/TaxReturns">Tax Returns</a>
+                                <a class="dropdown-item" href="/Services/Payroll">Payroll</a>
+                                <a class="dropdown-item" href="/Services/PreviousYearFilings">Previous Year Filings</a>
+                                <a class="dropdown-item" href="/Services/GovernmentRequisiteFormApplications">Government Requisite Form Applications</a>*@
+                            @*</div>
+                                </div>*@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
@@ -67,9 +71,9 @@
             </div>
         </nav>
     </header>
-        <main role="main" class="">
-            @RenderBody()
-        </main>
+    <main role="main" class="">
+        @RenderBody()
+    </main>
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -80,6 +84,11 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

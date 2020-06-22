@@ -4,18 +4,20 @@ using GuptaAccounting.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GuptaAccounting.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200505235637_AddSMTPKeysToDb")]
+    partial class AddSMTPKeysToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -26,20 +28,12 @@ namespace GuptaAccounting.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("AreCheckboxesAndOtherValid")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("Bookkeeping")
                         .HasColumnType("bit");
 
                     b.Property<string>("ContactNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EmailAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(320)")
-                        .HasMaxLength(320);
 
                     b.Property<bool>("GST_PST_WCB_Returns")
                         .HasColumnType("bit");
@@ -52,16 +46,13 @@ namespace GuptaAccounting.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Notes")
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
+                    b.Property<string>("NextStep")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Other")
-                        .HasColumnType("nvarchar(220)")
-                        .HasMaxLength(220);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Payroll_Services")
                         .HasColumnType("bit");
@@ -111,12 +102,6 @@ namespace GuptaAccounting.Data.Migrations
                     b.Property<string>("EmailToName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PortNumber")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("SSLRequired")
-                        .HasColumnType("bit");
 
                     b.Property<string>("ServerAddress")
                         .IsRequired()

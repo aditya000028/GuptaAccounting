@@ -30,9 +30,21 @@ namespace GuptaAccounting
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            //This line would enable system to support API and calls
+            services.AddControllersWithViews();
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddRazorPages();
+
+            //Need to be logged in to access private folders
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeFolder("/Admin");
+                    options.Conventions.AuthorizeAreaFolder("Identity", "/");
+                });
+
             services.AddMvc();
         }
 
@@ -61,14 +73,10 @@ namespace GuptaAccounting
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+                //Used for API calls so controller api calls are enabled
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
-            
-            
-
-            
-
         }
     }
 }
